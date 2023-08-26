@@ -1,0 +1,359 @@
+difference between nil and false(-)
+
+How do you access class methods from within an instance method in Ruby?
+
+What is the purpose of the prepend method when including a module in a class in Ruby? include and extend
+
+How do you define a constructor with default values for arguments in Ruby?
+
+Can you define a method that accepts a variable number of arguments in Ruby? If yes, how?
+
+How do you define class constants in Ruby and what is their scope?
+
+How do you create a class that cannot be instantiated in Ruby?(pending)
+
+Can you define a method that is available both at the instance level and the class level in Ruby? If yes, how?
+
+What is the purpose of the class_variables method in Ruby and how is it used?
+
+How do you access instance variables within a class in Ruby?
+
+How do you define a nested class in Ruby?
+
+What is the purpose of the protected keyword when defining methods in Ruby classes?
+
+What is the purpose of the ancestors method in Ruby and how is it useful?
+
+How do you create a class that can only have one instance in Ruby?
+
+What is the purpose of the included hook method in Ruby modules?
+
+Can you define a method inside another method in Ruby? If yes, how?4
+
+Can you access instance variables directly from outside the class in Ruby? Why or why not?
+
+How do you implement method overriding in Ruby?
+
+What is the purpose of the respond_to? method in Ruby and how is it used?
+
+How do you create a class-level instance variable in Ruby?
+
+How do you define a class method that can be called without creating an instance of the class?
+
+How do you access and modify instance variables from outside the class in Ruby?
+
+
+How do you create a class that cannot be inherited in Ruby?
+
+What is the purpose of the instance_of? method in Ruby?
+
+How do you define a class method that takes arguments in Ruby?
+
+What is the purpose of the defined? keyword in Ruby and how is it used?
+
+Can you define custom comparison methods (<, >, <=, >=) for objects of a class in Ruby? If yes, how?
+
+What is the purpose of the self keyword in Ruby class methods?
+
+What is the purpose of the attr_accessor method in Ruby?
+
+How do you define class-level constants in Ruby?
+
+What is the difference between a class method and a singleton method in Ruby?
+
+Can you define a method that is available both at the instance level and the class level in Ruby? If yes, how?
+
+What is the purpose of the defined? operator in Ruby and how is it used?
+
+How do you create a deep copy of an object in Ruby?
+
+How do you implement method aliasing in Ruby?
+
+How do you create a class that cannot be inherited in Ruby?
+
+Can you define a class inside a module in Ruby? If yes, how?
+
+How do you create a class-level alias for an instance method in Ruby?
+
+What is the purpose of the include and extend methods in Ruby classes?
+
+How do you implement method missing in Ruby classes?
+
+What is the purpose of the prepend method in Ruby modules?
+
+How do you implement method visibility for module methods in Ruby?
+
+Can you define a class as a module in Ruby? If yes, how?  no we can not we can import
+
+How do you access instance variables of a class from a module in Ruby?
+
+Can you dynamically define instance methods in Ruby classes at runtime? If yes, how? yes
+
+How do you implement method chaining using modules in Ruby?
+
+What is the purpose of the ancestors method in Ruby classes and modules?
+
+How do you define a private constant within a class in Ruby?
+
+Can you define a method that is available both in an instance and in the class itself in Ruby? If yes
+
+What is the difference between a module and a mixin in Ruby?
+
+How do you include multiple modules in a class in Ruby?
+
+
+
+Can you define a class inside a module in Ruby? If yes, how?
+
+What is the difference between a class variable and a class instance variable in Ruby?
+
+What is the purpose of the instance_eval and class_eval meth
+
+What is the purpose of the super keyword in Ruby and how is it used?
+
+How do you define a class constant that cannot be modified in Ruby?
+
+Can you define default values for method parameters in Ruby? If yes, how?
+
+What is the concept of method visibility and how does it relate to encapsulation in Ruby?
+
+How do you call a superclass method that has been overridden in a subclass in Ruby?
+
+Can you create an instance of a class without using the new keyword in Ruby? If yes, how? no
+
+What is the purpose of the attr family of methods in Ruby and how do they work?
+
+How do you access class-level constants and methods from within an instance method in Ruby?
+
+What is the difference between a class variable and a class instance variable in Ruby?
+
+What is method visibility in Ruby and what are the different visibility levels?
+
+How do you change the visibility of a method in Ruby?
+
+Can you override a private method in a subclass? Why or why not?
+
+What is the purpose of the protected visibility level in Ruby?
+
+How do you define class-specific behavior using the singleton_class in Ruby?
+
+What is the difference between a class method and an instance method in Ruby?
+
+How do you define a class method using the self keyword in Ruby?
+
+How do you create a class hierarchy with multiple levels of inheritance in Ruby?
+
+Can you create an anonymous class in Ruby? If yes, how?
+
+What is the difference between including a module and extending a module in Ruby classes?
+
+How do you access a class method from an instance of a class in Ruby? no you can create a instance method and in which you can call class meh
+
+Can you define a constructor (initializer) method other than initialize in Ruby
+
+How do you define a private method in Ruby? Can it be called from other methods in the same class? yes
+
+Can you define a class without any instance methods in Ruby? Why or why not?
+
+What are instance methods in Ruby?Can you access instance variables within class methods? Why or why not?
+
+What is the concept of method chaining in Ruby classes?
+
+How do you check if an object belongs to a specific class in Ruby?
+
+Can you define a class inside another class in Ruby? What is it called?
+
+How do you access class variables and methods from within a nested class in Ruby?
+
+How do you check if a class is a subclass of another class in Ruby?
+
+Can a class be both a superclass and a subclass at the same time in Ruby? no
+
+How do you prevent a class from being subclassed in Ruby?
+
+What is the difference between a module and a class in Ruby?
+
+What are instance methods in Ruby?
+In Ruby, instance methods are methods that belong to instances of a class. They define the behavior or actions that objects of the class can perform. Each instance of a class has its 
+
+How do you access class variables within instance methods?
+
+Can you override a private method in a subclass? Why or why not? not
+
+How do you explicitly specify the visibility level of a method in Ruby?
+
+What is the default visibility level for methods in Ruby classes? public
+	
+What is method overriding in Ruby?
+
+How do you override a method in a subclass?
+
+How do you access instance variables and methods within a class using self?
+
+Can you have instance variables with the same name in different instances of a class? Why or why not? yes 
+
+What are blocks and procs?
+
+What is the difference between a class method and an instance method in Ruby?
+
+The .upcase and .capitalize method are used for capitalizing the whole
+
+How many iterators are there in Ruby?
+
+What are some built-in Ruby class exceptions?
+
+Check if a value exists in an array in Ruby  
+
+Write a function that sorts the keys in a hash by the length of the key as a string.  
+
+How do you remove nil values in array using ruby?  
+
+What is the use of load and required? gfg example
+
+In how many ways you can compare Ruby string?
+
+Describe a closure in Ruby?
+
+What is the difference between throw/catch and raise/rescue?
+
+
+
+
+
+
+
+ 
+  
+Explain redo vs. retry usage  
+What is the difference between Proc invocation and lambda invocation?   
+What happens if a block is passed two arguments but only accepts one argument?   
+Why doesn't Ruby support method overloading?  
+What is an eigenclass?  
+What is the difference between Object#dup and #clone?   
+What is the difference between BasicObject#instance_eval and BasicObject#instance_exec?  
+When might you encounter a LocalJumpError?   
+What is the primary difference in these two code snippets?  
+How exactly does it work?  
+Is a block an object?   
+Is a method an object?   
+What happens to a constant which is not assigned?  
+What will be the result of each of the following lines of code  
+What is the differnece between extend and include in ruby?  
+
+What are two uses of ranges?  
+Why might you want to alias a method?   
+    Can you tell me the three levels of method access control for classes and modules? What do they imply about the method?  
+ What are some disadvantages of a case statement versus repeated elsif statements?
+hy might you use Hash#fetch over Hash#[] when querying values in a hash?   
+What are two uses of the splat operator?  
+What is a DSL and how does it pertain to Ruby?   
+What does it mean to coerce an object? Why would you do it?
+What is the difference between a class variable and a class instance variable?
+What is duck typing and how does it pertain to Ruby?   	
+ Why might you use #each instead of for/in?   
+  What is a predicate in the context of Ruby method naming conventions?  
+What is the difference between an Instance Variable and a Class Variable?   
+A detailed description of each is the topic of an entire post, but here's a great tutorial with examples.
+What is the difference between class methods and instance methods?
+How would you choose between Belongs_to And Has_one?
+ What is the difference between Object#dup and #clone?
+ What is the difference between content_for and yield?
+What is the difference between throw/catch and raise/rescue?
+What is the difference between Array#map and Array#each?	
+Describe a closure in Ruby
+  What is a Proc? 
+  What is the difference between Kernel#require and Kernel#load?   
+  Why can you safely use a string as a hash key, even though a string is mutable?   
+  What is the difference between throw/catch and raise/rescue?   
+Explain this ruby idiom: a ||= b
+Why might you use Hash#fetch over Hash#[] when querying values in a hash?
+Why might you use #each instead of for/in?
+What is an object?  
+class variable vs instance variable
+How does block invocation differ from method invocation?  
+When might you use the do/end syntax versus using the curly bracket syntax for a block?   
+retry
+Why might you want to avoid using string literals within loops?   
+What is the difference between Module#remove_method and Module#undef_method?   
+Write a single line of Ruby code that prints the Fibonacci sequence of any length as an array.
+block and ways to create
+what is mixin definition
+Ruby range represents a set of values with a beginning and an end. They can be constructed using s..e and s...e literals or with ::new.
+What is the difference between a proc and a lambda?
+Iterator is a concept used in object-oriented language. Iteration means doing one thing many times like a loop.
+ 
+How many iterators are there in Ruby?
+file handling
+Describe a closure in Ruby
+ 
+exception in rubuy 
+
+super and super()
+and &&
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Write a function that sorts the keys in a hash by the length of the key as a string. For instance, the hash:
+{ abc: 'hello', 'another_key' => 123, 4567 => 'third' }
+
+hsh.keys.collect(&:to_s).sort_by { |key| key.length }
+hsh.keys.map(&:to_s).sort_by(&:length)
+
+collect in ruby
+Explain some of the looping structures available in Ruby?
+what is <=>
+What is the difference between &&, || operators and and, or?  
+Can you explain the difference between ActiveSupport’s HashWithIndifferentAccess and Ruby’s Hash?  
+== === eql equal
+What is the use of load and require in Ruby?  
+yeild and return 
+What do you understand with the ERB in Ruby on Rails?
+Mention what is the difference extend and include?
+In Ruby code, you quite often see the trick of using an expression like array.map(&:method_name) as a shorthand form of array.map { |element| element.method_name }. How exactly does it work?
+
+ention what is the difference between Procs and Blocks?
+.Mention what is the difference between a gem and a plugin in Ruby?
+Write a single line of Ruby code that prints the Fibonacci sequence of any length as an array.
+
+each and map
+Mention what is the difference between a single quote and double quote?
+What is the difference between the Object methods clone and dup?
+
+kind_of? is_a?
+instance_of?
+
+In Ruby code, often it is observed that coder uses a short hand form of using an expression like array.map(&:method_name) instead of array.map { |element| element.method_name }. How this trick actually works?
+Mention what is the difference between Procs and Blocks?
+
+
+
+
+) What are the basic conditions that a user should pay attention to while preparing an ERB document in Ruby?
+It is necessary to keep the code between <%and>% for its proper execution in the Ruby environment. The same should be placed between <%+=and%> in case the same need to be printed.
+
+

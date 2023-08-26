@@ -1,0 +1,475 @@
+make operator overloading program
+sub and gsub
+what is Mixin
+use of 
+kind_of?() , is_a?
+is_a? and kind_of? method is used to check if an object belong to its class or subclass
+instance_of?() it this method used to check if object belong to adject to the class
+
+
+                                          How do you access class methods from within an instance method in Ruby?
+class MyClass
+  def self.class_method
+    puts "This is a class method"
+  end
+
+  def instance_method
+    # Accessing class method from within an instance method
+    self.class.class_method
+    # self.MyClass.class_method  # using this also you can call 
+  end
+end
+
+my_object = MyClass.new
+my_object.instance_method
+
+
+                        What is the purpose of the prepend method when including a module in a class in Ruby?
+                        
+To summarize, prepend affects the method lookup chain, giving precedence to the prepended modules methods. include adds instance methods from a module to a class or module, while extend adds class methods from a module to a class or object.
+module A
+  def hello
+    puts "Hello from module A" output
+  end
+end
+
+class B
+  prepend A
+
+  def hello
+    puts "Hello from class B"
+  end
+end
+
+b = B.new
+b.hello
+
+module A
+  def hello
+    puts "Hello from module A"
+  end
+end
+
+class B
+  include A
+
+  def hello
+    puts "Hello from class B"  output
+  end
+end
+
+b = B.new
+b.hello
+
+
+module A
+  def hello
+    puts "Hello from module A" output
+  end
+end
+
+class B
+  extend A
+
+  def hello
+    puts "Hello from class B"
+  end
+end
+
+B.hello
+
+                                 How do you define a constructor with default values for arguments in Ruby?
+
+class MyClass
+  def initialize(arg1 = 5, arg2 = "default")
+    @arg1 = arg1
+    @arg2 = arg2
+  end
+end
+
+
+obj = MyClass.new
+puts obj.inspect
+
+
+                                   Can you define a method that accepts a variable number of arguments in Ruby? If yes, how?
+def my_method(*args)
+  args.each do |arg|
+    puts arg
+  end
+end
+
+
+
+                                   How do you define class constants in Ruby and what is their scope?
+class MyClass
+  MY_CONSTANT = 100
+
+  def print_constant
+    puts MY_CONSTANT
+  end
+end
+
+The scope of a class constant is limited to the class in which it is defined and its subclasses. It means that the constant can be accessed within the class and any derived subclasses but not outside of them. Here s an example to illustrate the scope of class constants:
+
+
+
+                                   How do you create a class that cannot be instantiated in Ruby?
+class MySingletonClass
+  private_class_method :new
+
+  def self.instance
+    @instance ||= new
+  end
+
+  def some_method
+    puts "Hello from the singleton class!"
+  end
+end
+instance = MySingletonClass.instance
+instance.some_method
+
+
+
+                         Can you define a method that is available both at the instance level and the class level in Ruby? If yes, how?
+class MyClass
+  def self.my_method
+    puts "Hello from the class method!"
+  end
+
+  def my_method
+    puts "Hello from the instance method!"
+  end
+end
+MyClass.my_method        # Output: Hello from the class method!
+
+obj = MyClass.new
+obj.my_method            # Output: Hello from the instance method!
+
+
+
+                                 What is the purpose of the class_variables method in Ruby and how is it used?
+class MyClass
+  @@class_var1 = "Class Variable 1"
+  @@class_var2 = "Class Variable 2"
+
+  def self.print_class_variables
+    self.class_variables
+  end
+end
+
+a = MyClass.print_class_variables
+puts a
+#output
+@@class_var1
+@@class_var2
+In the above example, the class_variables method is invoked within the print_class_variables class method of MyClass. It retrieves an array containing the symbols :@@class_var1 and :@@class_var2, representing the names of the class variables defined within the class.
+
+
+
+How do you define a nested class in Ruby?
+To define a nested class in Ruby, you can simply define a class within another class. Here s an example:
+
+class OuterClass
+  def initialize
+    @outer_variable = "Outer"
+  end
+
+  class InnerClass
+    def initialize
+      @inner_variable = "Inner"
+    end
+
+    def print_inner_variable
+      puts @inner_variable
+    end
+  end
+end
+
+outer_obj = OuterClass.new
+inner_obj = OuterClass::InnerClass.new
+inner_obj.print_inner_variable
+
+
+What is the purpose of the ancestors method in Ruby and how is it useful?
+
+The ancestors method in Ruby is a built-in method available on classes and modules. It returns an array that represents the inheritance hierarchy or module inclusion chain of a class or module.
+
+module Module1
+end
+
+module Module2
+end
+
+class MyClass
+  include Module1
+  include Module2
+end
+
+p MyClass.ancestors
+
+#output [MyClass, Module2, Module1, Object, Kernel, BasicObject]
+
+Kernel:
+The Kernel module is a mixin module in Ruby that provides a set of core methods that are available globally to all objects in the Ruby environment. These methods can be accessed without explicitly specifying an object. Methods like puts, print, gets, sprintf, raise, require, and many others are part of Kernel. By default, all Ruby objects have access to the methods defined in Kernel because they implicitly include it.
+
+BasicObject:
+The BasicObject class is the root of Ruby s object hierarchy. It is a superclass of all classes in Ruby, including Object itself. BasicObject is defined with a minimal set of instance methods and serves as a clean, minimalistic base from which all other classes inherit.
+
+
+How do you create a class that can only have one instance in Ruby?
+
+require 'singleton'
+
+class MySingleton
+  include Singleton
+
+  def initialize
+    # Initialization code
+  end
+
+  # Other methods
+end
+
+
+What is the purpose of the included hook method in Ruby modules?
+module MyModule
+  def self.included(base)
+    
+    puts "#{base} has included MyModule"
+  end
+
+  module ClassMethods
+    def some_class_method
+      # ...
+    end
+  end
+
+  def some_instance_method
+    # ...
+  end
+end
+
+class MyClass
+  include MyModule
+end
+
+output MyClass has included MyModule
+
+
+
+
+
+Can you define a method inside another method in Ruby? If yes, how?4
+No, in Ruby, you cannot define a method inside another method directly. Method definitions should be at the class or module level.
+class MyClass
+  def my_method
+    class NestedClass
+      def nested_method
+        puts "This is a nested method"
+      end
+    end
+
+    nested = NestedClass.new
+    nested.nested_method
+  end
+end
+
+obj = MyClass.new
+obj.my_method   # This is a nested method
+In the above example, the my_method in the MyClass class defines a nested class NestedClass and a method nested_method within it. The nested_method can be called on an instance of NestedClass created inside my_method.
+
+
+
+
+
+
+
+
+
+
+
+                                	What is the purpose of the respond_to? method in Ruby and how is it used?
+
+In Ruby, the respond_to? method is used to check whether an object responds to a particular method. It allows you to dynamically determine if an object can respond to a specific method invocation, which is particularly useful when you want to avoid calling a method that might not be defined for a certain object.
+
+The respond_to? method takes a symbol or a string representing the method name as its argument and returns true if the object can respond to that method, and false otherwise. Here s the basic syntax:
+
+
+
+class Person
+  def speak
+    puts "Hello!"
+  end
+end
+
+person = Person.new
+
+if person.respond_to?(:speak)
+  person.speak
+else
+  puts "This person can't speak."
+end
+
+
+
+
+
+How do you create a class-level instance variable in Ruby?
+
+class MyClass
+  @@class_variable = 0
+
+  def initialize
+    @@class_variable += 1
+  end
+
+  def self.class_variable
+    @@class_variable
+  end
+end
+
+obj1 = MyClass.new
+obj2 = MyClass.new
+obj3 = MyClass.new
+
+puts MyClass.class_variable  # Output: 3
+
+
+
+
+How do you define a class method that can be called without creating an instance of the class?
+class MyClass
+  def self.my_class_method
+    puts "This is a class method."
+  end
+end
+
+MyClass.my_class_method
+# Output: "This is a class method."
+
+
+
+How do you access and modify instance variables from outside the class in Ruby?
+class MyClass
+  attr_reader :my_variable  # Generates a getter method
+  attr_writer :my_variable  # Generates a setter method
+
+  def initialize
+    @my_variable = "initial value"
+  end
+end
+
+obj = MyClass.new
+puts obj.my_variable  # Output: "initial value"
+
+obj.my_variable = "new value"
+puts obj.my_variable  # Output: "new value"
+
+
+
+
+
+How do you create class-level instance variables in Ruby?
+class MyClass
+  @class_instance_variable = "Class instance variable"
+  @@class_variable = "Class variable"
+
+  def self.class_instance_variable
+    @class_instance_variable
+  end
+
+  def self.class_variable
+    @@class_variable
+  end
+end
+
+puts MyClass.class_instance_variable  # Output: "Class instance variable"
+puts MyClass.class_variable  # Output: "Class variable"
+
+
+
+
+
+How do you create a class that cannot be inherited in Ruby?
+
+
+module MyModule
+  def self.included(base)
+    raise "Cannot inherit from this class"
+  end
+
+  # Define module methods and behavior here
+end
+class MyClass
+  include MyModule
+
+  # Class-specific implementation here
+end
+
+obj = MyClass.new  # Raises an exception: "Cannot inherit from this class"
+
+
+What is the purpose of the defined? keyword in Ruby and how is it used?
+
+What is the purpose of the defined? keyword in Ruby and how is it used?
+
+# Example with true
+my_variable = 42
+
+if defined?(my_variable)
+  puts "my_variable is defined"
+else
+  puts "my_variable is not defined"
+end
+# Output: "my_variable is defined"
+
+# Example with false
+if defined?(another_variable)
+  puts "another_variable is defined"
+else
+  puts "another_variable is not defined"
+end
+# Output: "another_variable is not defined"
+
+
+
+# Example with class
+if defined?(MyClass)
+  puts "MyClass is defined"
+else
+  puts "MyClass is not defined"
+end
+# Output: "MyClass is defined"
+
+# Example with method
+class MyClass
+  def my_method
+    puts "This is my method"
+  end
+end
+
+if defined?(MyClass.my_method)
+  puts "MyClass.my_method is defined"
+else
+  puts "MyClass.my_method is not defined"
+end
+# Output: "MyClass.my_method is defined"
+
+
+What is the purpose of the self keyword in Ruby class methods?
+n Ruby, the self keyword is used to refer to the current object or the current instance of a class. In the context of class methods, the self keyword is used to define and access class-level variables, methods, and constants.
+
+class MyClass
+  def self.my_class_method
+    # Class method implementation
+  end
+end
+
+MyClass.my_class_method
+
+
+
+
+
+

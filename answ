@@ -1,0 +1,1265 @@
+||=
+module and mixin
+lambda and proc
+str1 = "Hello"
+str2 = "hello"
+
+and this check both 
+&& its not check botn if first true then check second otherwise first false then not check second
+
+respond_to?()
+mixin
+
+difference clas val and insa
+equal? eql?
+
+equal? = 
+eql? = 
+
+puts str1.casecmp(str2) ingore the cansentive
+
+hash = { :abc => 'hello', 'another_key' => 123, 4567 => 'third' }
+sorted_keys = hash.sort_by{|k,v| k.to_s}
+
+puts sorted_keys pending
+
+================
+hash1 = { a: 10, b: 20, c: 30 }
+hash2 = { b: 40, c: 50, d: 60, e: 45 }
+
+hash2.each do |key, value|
+  if hash1.key?(key)
+    hash1[key] += value
+  else
+    hash1[key] = value
+  end
+end
+
+puts hash1
+
+
+======================
+hash = { abc: 'hello', 'another_key' => 123, 4567 => 'third' }
+
+sorted_hash = hash.sort_by { |key, value| value }.to_h
+puts sorted_hash.inspect
+
+
+
+
+ [{"a" => 10},{"b" => 20},{"c" => 30}]
+
+list = [{"a" => 10}, {"b" => 20}, {"c" => 30}]
+==============================================
+
+keys = list.map { |hash| hash.keys }.flatten
+puts "Keys: #{keys}" # Output: Keys: ["a", "b", "c"]
+
+# Get all values in an array
+values = list.map { |hash| hash.values }.flatten
+puts "Values: #{values}" # Output: Values: [10, 20, 30]
+
+
+sum = values.sum
+puts "Sum of values: #{sum}" # Output: Sum of values: 60
+------------------------------------------------------
+
+
+
+=========================================================
+list = [{"a" => 10}, {"b" => 20}, {"c" => 30}]
+
+# Get all keys in an array
+keys = list.map(&:keys).flatten
+puts "Keys: #{keys}" # Output: Keys: ["a", "b", "c"]
+
+# Get all values in an array
+values = list.map(&:values).flatten
+puts "Values: #{values}" # Output: Values: [10, 20, 30]
+
+# Calculate the sum of all values
+sum = values.sum
+puts "Sum of values: #{sum}" # Output: Sum of values: 60
+
+--------------------------------------------------------
+
+
+
+
+string = "Hello, World!"
+new_string = string.sub("Hello", "Hi")
+puts new_string
+
+string = "Hello, Hello, Hello!"
+new_string = string.gsub("Hello", "Hi")
+puts new_string
+# Output: "Hi, Hi, Hi!"
+
+
+defined? foo
+defined? bar
+make operator overloading program
+sub and gsub
+what is Mixin
+use of 
+kind_of?() , is_a?
+is_a? and kind_of? method is used to check if an object belong to its class or subclass
+instance_of?() it this method used to check if object belong to adject to the class
+
+==================================
+
+
+
+How many iterators are there in Ruby
+times ,map, select, collect,each, while ,until,
+
+-------------------------------------------
+
+======================================================
+                                          How do you access class methods from within an instance method in Ruby?
+class MyClass
+  def self.class_method
+    puts "This is a class method"
+  end
+
+  def instance_method
+    # Accessing class method from within an instance method
+    self.class.class_method
+    # self.MyClass.class_method  # using this also you can call 
+  end
+end
+
+my_object = MyClass.new
+my_object.instance_method
+-------------------------------------------------------------------------
+
+
+
+                        What is the purpose of the prepend method when including a module in a class in Ruby?
+                        
+To summarize, prepend affects the method lookup chain, giving precedence to the prepended modules methods. include adds instance methods from a module to a class or module, while extend adds class methods from a module to a class or object.
+module A
+  def hello
+    puts "Hello from module A" output
+  end
+end
+
+class B
+  prepend A
+
+  def hello
+    puts "Hello from class B"
+  end
+end
+
+b = B.new
+b.hello
+
+module A
+  def hello
+    puts "Hello from module A"
+  end
+end
+
+class B
+  include A
+
+  def hello
+    puts "Hello from class B"  output
+  end
+end
+
+b = B.new
+b.hello
+
+
+module A
+  def hello
+    puts "Hello from module A" output
+  end
+end
+
+class B
+  extend A
+
+  def hello
+    puts "Hello from class B"
+  end
+end
+
+B.hello
+
+
+
+=====================================================================
+                                 How do you define a constructor with default values for arguments in Ruby?
+
+class MyClass
+  def initialize(arg1 = 5, arg2 = "default")
+    @arg1 = arg1
+    @arg2 = arg2
+  end
+end
+
+
+obj = MyClass.new
+puts obj.inspect
+-----------------------------------------------------------------------------------------
+
+
+
+
+
+
+==========================================================================
+                                   Can you define a method that accepts a variable number of arguments in Ruby? If yes, how?
+def my_method(*args)
+  args.each do |arg|
+    puts arg
+  end
+end
+-------------------------------------------
+
+
+
+
+
+==========================================================================
+                                   How do you define class constants in Ruby and what is their scope?
+class MyClass
+  MY_CONSTANT = 100
+
+  def print_constant
+    puts MY_CONSTANT
+  end
+end
+
+The scope of a class constant is limited to the class in which it is defined and its subclasses. It means that the constant can be accessed within the class and any derived subclasses but not outside of them. Here s an example to illustrate the scope of class constants:
+------------------------------------------------------------------------------
+
+
+===========================================
+
+                                   How do you create a class that cannot be instantiated in Ruby?
+class MySingletonClass
+  private_class_method :new
+
+  def self.instance
+    @instance ||= new
+  end
+
+  def some_method
+    puts "Hello from the singleton class!"
+  end
+end
+instance = MySingletonClass.instance
+instance.some_method
+------------------------------------------------------------------------
+
+
+================================================================
+
+                         Can you define a method that is available both at the instance level and the class level in Ruby? If yes, how?
+class MyClass
+  def self.my_method
+    puts "Hello from the class method!"
+  end
+
+  def my_method
+    puts "Hello from the instance method!"
+  end
+end
+MyClass.my_method        # Output: Hello from the class method!
+
+obj = MyClass.new
+obj.my_method            # Output: Hello from the instance method!
+
+
+----------------------------------------------------------------------------------------------------
+
+
+
+=======================================================================
+                                 What is the purpose of the class_variables method in Ruby and how is it used?
+class MyClass
+  @@class_var1 = "Class Variable 1"
+  @@class_var2 = "Class Variable 2"
+
+  def self.print_class_variables
+    self.class_variables
+  end
+end
+
+a = MyClass.print_class_variables
+puts a
+#output
+@@class_var1
+@@class_var2
+In the above example, the class_variables method is invoked within the print_class_variables class method of MyClass. It retrieves an array containing the symbols :@@class_var1 and :@@class_var2, representing the names of the class variables defined within the class.
+
+
+---------------------------------------------------------------------------------------------
+
+
+
+
+================================================================================
+How do you define a nested class in Ruby?
+To define a nested class in Ruby, you can simply define a class within another class. Here s an example:
+
+class OuterClass
+  def initialize
+    @outer_variable = "Outer"
+  end
+
+  class InnerClass
+    def initialize
+      @inner_variable = "Inner"
+    end
+
+    def print_inner_variable
+      puts @inner_variable
+    end
+  end
+end
+
+outer_obj = OuterClass.new
+inner_obj = OuterClass::InnerClass.new
+inner_obj.print_inner_variable
+-----------------------------------------------------------------------
+
+
+
+
+
+====================================================
+What is the purpose of the ancestors method in Ruby and how is it useful?
+
+The ancestors method in Ruby is a built-in method available on classes and modules. It returns an array that represents the inheritance hierarchy or module inclusion chain of a class or module.
+
+module Module1
+end
+
+module Module2
+end
+
+class MyClass
+  include Module1
+  include Module2
+end
+
+p MyClass.ancestors
+
+#output [MyClass, Module2, Module1, Object, Kernel, BasicObject]
+
+Kernel:
+The Kernel module is a mixin module in Ruby that provides a set of core methods that are available globally to all objects in the Ruby environment. These methods can be accessed without explicitly specifying an object. Methods like puts, print, gets, sprintf, raise, require, and many others are part of Kernel. By default, all Ruby objects have access to the methods defined in Kernel because they implicitly include it.
+
+BasicObject:
+The BasicObject class is the root of Ruby s object hierarchy. It is a superclass of all classes in Ruby, including Object itself. BasicObject is defined with a minimal set of instance methods and serves as a clean, minimalistic base from which all other classes inherit.
+----------------------------------------------------------------
+
+
+
+
+
+===================================================================
+How do you create a class that can only have one instance in Ruby?
+
+require 'singleton'
+
+class MySingleton
+  include Singleton
+
+  def initialize
+    # Initialization code
+  end
+
+  # Other methods
+end
+---------------------------------------------------------------
+
+
+
+
+===================================================
+What is the purpose of the included hook method in Ruby modules?
+module MyModule
+  def self.included(base)
+    
+    puts "#{base} has included MyModule"
+  end
+
+  module ClassMethods
+    def some_class_method
+      # ...
+    end
+  end
+
+  def some_instance_method
+    # ...
+  end
+end
+
+class MyClass
+  include MyModule
+end
+
+output MyClass has included MyModule
+------------------------------------------------------
+
+
+
+
+============================================================
+Can you define a method inside another method in Ruby? If yes, how?4
+No, in Ruby, you cannot define a method inside another method directly. Method definitions should be at the class or module level.
+class MyClass
+  def my_method
+    class NestedClass
+      def nested_method
+        puts "This is a nested method"
+      end
+    end
+
+    nested = NestedClass.new
+    nested.nested_method
+  end
+end
+
+obj = MyClass.new
+obj.my_method   # This is a nested method
+In the above example, the my_method in the MyClass class defines a nested class NestedClass and a method nested_method within it. The nested_method can be called on an instance of NestedClass created inside my_method.
+
+-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+==============================================================================
+                                	What is the purpose of the respond_to? method in Ruby and how is it used?
+
+In Ruby, the respond_to? method is used to check whether an object responds to a particular method. It allows you to dynamically determine if an object can respond to a specific method invocation, which is particularly useful when you want to avoid calling a method that might not be defined for a certain object.
+
+The respond_to? method takes a symbol or a string representing the method name as its argument and returns true if the object can respond to that method, and false otherwise. Here s the basic syntax:
+
+
+
+class Person
+  def speak
+    puts "Hello!"
+  end
+end
+
+person = Person.new
+
+if person.respond_to?(:speak)
+  person.speak
+else
+  puts "This person can't speak."
+end
+---------------------------------------------------------------------------
+
+
+===================================
+How do you create a class-level instance variable in Ruby?
+
+class MyClass
+  @@class_variable = 0
+
+  def initialize
+    @@class_variable += 1
+  end
+
+  def self.class_variable
+    @@class_variable
+  end
+end
+
+obj1 = MyClass.new
+obj2 = MyClass.new
+obj3 = MyClass.new
+
+puts MyClass.class_variable  # Output: 3
+------------------------------------------
+
+
+
+
+=========================================
+How do you define a class method that can be called without creating an instance of the class?
+class MyClass
+  def self.my_class_method
+    puts "This is a class method."
+  end
+end
+
+MyClass.my_class_method
+# Output: "This is a class method."
+
+------------------------------
+
+
+
+
+
+
+==================================================
+How do you access and modify instance variables from outside the class in Ruby?
+class MyClass
+  attr_reader :my_variable  # Generates a getter method
+  attr_writer :my_variable  # Generates a setter method
+
+  def initialize
+    @my_variable = "initial value"
+  end
+end
+
+obj = MyClass.new
+puts obj.my_variable  # Output: "initial value"
+
+obj.my_variable = "new value"
+puts obj.my_variable  # Output: "new value"
+------------------------------------------------
+
+
+
+===================================================
+How do you create class-level instance variables in Ruby?
+class MyClass
+  @class_instance_variable = "Class instance variable"
+  @@class_variable = "Class variable"
+
+  def self.class_instance_variable
+    @class_instance_variable
+  end
+
+  def self.class_variable
+    @@class_variable
+  end
+end
+
+puts MyClass.class_instance_variable  # Output: "Class instance variable"
+puts MyClass.class_variable  # Output: "Class variable"
+-----------------------------------------------------
+
+
+
+
+
+==============================================
+How do you create a class that cannot be inherited in Ruby?
+
+
+module MyModule
+  def self.included(base)
+    raise "Cannot inherit from this class"
+  end
+
+  # Define module methods and behavior here
+end
+class MyClass
+  include MyModule
+
+  # Class-specific implementation here
+end
+
+obj = MyClass.new  # Raises an exception: "Cannot inherit from this class"
+-------------------------------------------------------
+
+
+
+
+
+
+==============================================
+What is the purpose of the defined? keyword in Ruby and how is it used?
+
+# Example with true
+my_variable = 42
+
+if defined?(my_variable)
+  puts "my_variable is defined"
+else
+  puts "my_variable is not defined"
+end
+# Output: "my_variable is defined"
+
+# Example with false
+if defined?(another_variable)
+  puts "another_variable is defined"
+else
+  puts "another_variable is not defined"
+end
+# Output: "another_variable is not defined"
+
+
+
+# Example with class
+if defined?(MyClass)
+  puts "MyClass is defined"
+else
+  puts "MyClass is not defined"
+end
+# Output: "MyClass is defined"
+
+# Example with method
+class MyClass
+  def my_method
+    puts "This is my method"
+  end
+end
+
+if defined?(MyClass.my_method)
+  puts "MyClass.my_method is defined"
+else
+  puts "MyClass.my_method is not defined"
+end
+# Output: "MyClass.my_method is defined"
+---------------------------------------------------
+
+
+
+
+
+=====================================================================================
+What is the purpose of the self keyword in Ruby class methods?
+n Ruby, the self keyword is used to refer to the current object or the current instance of a class. In the context of class methods, the self keyword is used to define and access class-level variables, methods, and constants.
+
+class MyClass
+  def self.my_class_method
+    # Class method implementation
+  end
+end
+
+MyClass.my_class_method
+-----------------------------------------------------
+
+
+
+
+
+
+==================================================
+What is the difference between a class method and a singleton method in Ruby?
+Singleton Method: A singleton method, also known as an "eigenclass" method or "metaclass" method, is defined on a specific instance of a class. It is unique to that instance and not shared with other instances. Singleton methods are defined using the object's instance and the def keyword. Here's an example:
+
+
+obj = MyClass.new
+def obj.my_singleton_method
+  puts "This is a singleton method"
+end
+
+obj.my_singleton_method
+----------------------------------------------------------------
+
+
+
+==============================
+How do you create a shallow and deep copy of an object in Ruby?
+
+shallow copy meanse change in original will affect in copy as well
+deep copy means change in original will not affect in copy as well
+
+shallow copy example 
+
+class MyClass
+  attr_accessor :data
+
+  def initialize(data)
+    @data = data
+  end
+end
+
+a = MyClass.new("222")
+b = a
+a.data = "sdsd"
+puts b.data
+output = sdsd
+
+
+
+
+
+deep copy
+class MyClass
+  attr_accessor :data
+
+  def initialize(data)
+    @data = data
+  end
+end
+
+a = MyClass.new("222")
+b = a.dup
+a.data = "sdsd"
+puts b.data
+output 222
+
+-----------------------------
+
+
+
+
+
+==============================================
+How do you implement method aliasing in Ruby?
+
+Renaming Methods: Aliasing allows you to give a method a more descriptive or intuitive name without changing its underlying implementation. This can improve code readability and maintainability.
+
+class MyClass
+  def my_method
+    puts "Original method"
+  end
+
+  alias_method :alias_method_name, :my_method
+end
+
+obj = MyClass.new
+obj.alias_method_name # Calling the aliased method
+
+
+
+
+--------------------------
+
+
+
+=====================================================
+How do you create a class that cannot be inherited in Ruby?
+class FinalClass
+  def self.inherited(subclass)
+    raise "#{subclass} cannot inheri`t from FinalClass"
+  end
+end
+
+class ChildClass < FinalClass
+  # This will raise an error upon inheritance
+end
+
+----------------------------------------
+
+
+
+====================================================
+Can you define a class inside a module in Ruby? If yes, how?
+
+module FinalModule
+  def self.included(base)
+    raise "#{base} cannot include FinalModule"
+  end
+end
+
+class MyClass
+  include FinalModule
+end
+-----------------------------------
+
+
+
+
+=====================================================
+How do you create a class-level alias for an instance method in Ruby?
+
+class MyClass
+  def my_method
+    puts "Original instance method"
+  end
+
+  class << self
+    alias_method :class_alias_method, :my_method
+  end
+end
+
+obj = MyClass.new
+obj.my_method         # Calling the instance method
+MyClass.class_alias_method   # Calling the class-level alias
+
+----------------------------------------------------
+
+
+
+========================================
+How do you implement method missing in Ruby classes?
+class MyClass
+  def method_missing(name, *args)
+    puts "You called an undefined method: #{name}"
+    # Additional logic or error handling can be added here
+  end
+end
+
+obj = MyClass.new
+obj.dfdf  # Calling an undefined method
+
+-------------------------------------------------------
+
+
+
+
+========================================================
+How do you implement method visibility for module methods in Ruby?
+
+
+module MyModule
+  def self.demo
+    puts "This is a private method"
+  end
+  
+  def self.best
+    puts "This is a public method"
+  end
+
+  private_class_method :demo
+end
+
+MyModule.best    # Calling the public method
+MyModule.demo    # This would raise a NoMethodError since it's private
+
+------------------------------------------------------------------
+
+
+
+
+======================================================================
+How do you access instance variables of a class from a module in Ruby?
+
+module MyModule
+  def print_instance_variable
+    puts "The value of @my_variable is: #{@my_variable}"
+  end
+
+  def set_instance_variable(value)
+    @my_variable = value
+  end
+
+  def get_instance_variable
+    @my_variable
+  end
+end
+
+class MyClass
+  include MyModule
+
+  def initialize
+    @my_variable = "Hello, World!"
+  end
+end
+
+obj = MyClass.new
+obj.print_instance_variable  # Output: "The value of @my_variable is: Hello, World!"
+
+obj.set_instance_variable("New value")
+obj.print_instance_variable  # Output: "The value of @my_variable is: New value"
+
+value = obj.get_instance_variable
+puts value  # Output: "New value"
+--------------------------------------------------------------------------
+
+
+
+
+================================================
+Can you dynamically define instance methods in Ruby classes at runtime? If yes, how? yes
+class MyClass
+  def dynamic_method(method_name)
+    self.class.define_method(method_name) do
+      puts "This is the dynamically defined method: #{method_name}"
+    end
+  end
+end
+
+obj = MyClass.new
+obj.dynamic_method("my_dynamic_method")
+
+obj.my_dynamic_method  # Output: "This is the dynamically defined method: my_dynamic_method"
+---------------------------------------
+
+
+
+
+
+
+
+
+
+=================================================
+How do you implement method chaining using modules in Ruby?
+
+
+module ChainingModule
+  def method1
+    puts "Method 1"
+    self
+  end
+
+  def method2
+    puts "Method 2"
+    self
+  end
+
+  def method3
+    puts "Method 3"
+    self
+  end
+end
+
+class MyClass
+  include ChainingModule
+end
+
+obj = MyClass.new
+obj.method1.method2.method3
+
+output 
+Method 1
+Method 2
+Method 4
+
+
+
+---------------------------------------------------
+
+
+
+====================================================
+How do you define a private constant within a class in Ruby?
+
+class MyClass
+  private
+
+  module PrivateConstants
+    MY_CONSTANT = 42
+  end
+
+  public
+
+  def use_constant
+    puts PrivateConstants::MY_CONSTANT
+  end
+end
+
+obj = MyClass.new
+obj.use_constant  # Output: 42
+puts obj::PrivateConstants::MY_CONSTANT  # Error: private constant MyClass::PrivateConstants::MY_CONSTANT referenced
+----------------------------------------------------------------------------------
+
+
+==================================
+How do you define a class constant that cannot be modified in Ruby?
+
+class MyClass
+  MY_CONSTANT = "Hello, constant".freeze
+end
+
+-----------------------------
+
+==========================
+
+Can you create an instance of a class without using the new keyword in Ruby? If yes, how?
+No, in Ruby, you cannot create an instance of a class without using the new keyword. The new keyword is used to create a new instance of a class by calling the class s constructor.
+---------------------------------------------
+
+================================
+How do you access class-level constants and methods from within an instance method in Ruby?
+
+class MyClass
+  MY_CONSTANT = "Hello, constant"
+
+  def instance_method
+    puts "Accessing class constant: #{self.class::MY_CONSTANT}"
+    self.class.class_method
+  end
+
+  def self.class_method
+    puts "This is a class method"
+  end
+end
+
+
+
+puts MyClass::MY_CONSTANT
+
+
+
+
+---------------------------
+
+
+
+
+===============================================================
+
+What is the difference between a class variable and a class instance variable in Ruby?
+
+class = this variable can modify by instacne
+subclass = subclass can access and shared among subclass and can modify by subclass
+denoted by = @@
+
+instance = can access by instance of class
+They are specific to a particular class and its subclasses but not shared with other sibling classes.
+
+They are accessed within class methods (singleton methods) or instance methods of the class itself, but not within instance methods of instances of the class.
+---------------------------------------------------
+
+
+==============================
+Can you create an anonymous class in Ruby? If yes, how?
+
+anonymous_class = Class.new do
+  def say_hello
+    puts "Hello from the anonymous class!"
+  end
+end
+
+obj = anonymous_class.new
+obj.say_hello  # 
+
+
+
+----------------------
+
+
+
+==============================================
+
+Can you define a constructor (initializer) method other than initialize in Ruby?
+
+class MyClass
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+obj = MyClass.new("John")
+def obj.alternate_constructor
+  # Alternative initialization logic
+  self.name = "Alternate"
+end
+
+puts obj.name  # Output: "John"
+obj.alternate_constructor
+puts obj.name  # Output: "Alternate"
+
+
+
+------------------------------------
+
+===============
+
+
+===================================
+What are instance methods in Ruby?Can you access instance variables within class methods? Why or why not?
+
+
+class MyClass
+  def initialize(name)
+    @name = name
+  end
+
+  def self.class_method(obj)
+    puts obj.name
+  end
+
+  def name
+    @name
+  end
+end
+
+obj = MyClass.new("John")
+MyClass.class_method(obj)  # Output: "John"
+--------------------------------------------
+
+
+
+========================================================
+
+What is the concept of method chaining in Ruby classes?
+
+Method chaining is a technique in Ruby that allows you to invoke multiple methods on an object in a single line of code by chaining them together. Each method in the chain operates on the object returned by the previous method call.
+
+class Person
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def introduce
+    puts "Hi, my name is #{@name}."
+    self  # Return self to enable method chaining
+  end
+
+  def say_age
+    puts "I am #{@age} years old."
+    self  # Return self to enable method chaining
+  end
+end
+
+person = Person.new("John", 30)
+person.introduce.say_age  # Method chaining
+
+# Output:
+# Hi, my name is John.
+# I am 30 years old.
+
+
+-------------------------------------
+
+
+=============================================================
+How do you check if an object belongs to a specific class in Ruby?
+class Animal
+end
+
+class Dog < Animal
+end
+
+class Cat < Animal
+end
+
+dog = Dog.new
+cat = Cat.new
+
+puts dog.is_a?(Animal)  # Output: true
+puts cat.is_a?(Animal)  # Output: true
+puts dog.is_a?(Dog)     # Output: true
+puts cat.is_a?(Dog)     # Output: false
+
+-------------------------
+
+
+
+
+
+
+================================================================
+class OuterClass
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+    @inner = InnerClass.new
+  end
+
+  def outer_method
+    puts "This is an outer method"
+  end
+
+  class InnerClass
+    def inner_method
+      puts "This is an inner method"
+    end
+  end
+end
+
+outer = OuterClass.new("Outer")
+outer.outer_method    # Output: "This is an outer method"
+outer.name = "Updated"
+puts outer.name       # Output: "Updated"
+
+inner = OuterClass::InnerClass.new
+inner.inner_method    # Output: "This is an inner method"
+--------------------------------------------------------------------------------------
+
+
+
+==========================================
+How do you check if a class is a subclass of another class in Ruby?
+
+
+class Animal
+end
+
+class Dog < Animal
+end
+
+class Cat < Animal
+end
+
+puts Dog.ancestors.include?(Animal)  # Output: true
+puts Cat.ancestors.include?(Animal)  # Output: true
+puts Animal.ancestors.include?(Animal)  # Output: true
+puts Animal.ancestors.include?(Object)  # Output: true
+
+-------------------------------------------------------
+
+================================================================
+
+How do you prevent a class from being subclassed in Ruby?
+
+class BaseClass
+  def self.inherited(subclass)
+    raise "Subclassing of BaseClass is not allowed"
+  end
+
+  def some_method
+    puts "Hello from BaseClass"
+  end
+end
+
+class SubClass < BaseClass
+end
+
+
+---------------------------------------------------------
+
+================================================================
+
+Can you have instance variables with the same name in different instances of a class? Why or why not? yes 
+
+
+class MyClass
+  def initialize(value)
+    @variable = value
+  end
+
+  def get_variable
+    @variable
+  end
+  
+  def variable
+    @variable = "asa"
+  end
+end
+
+obj1 = MyClass.new(10)
+obj2 = MyClass.new(20)
+
+puts obj1.get_variable  # Output: 10
+puts obj2.get_variable  # Output: 20
+
+puts obj1.variable
+
+-------------------------------------------------------------------------------
+What are some built-in Ruby class exceptions?
+
+StandardError
+RuntimeError
+ArgumentError
+NoMethoError
+TypeError
+
+
+
+================================================================
+Describe a closure in Ruby?
+
+Closures: Closures are functions (Procs or lambdas) that capture their surrounding environment, including local variables and constants, allowing them to be accessed and manipulated later. Closures are objects and can be assigned to variables, passed as arguments, and stored for later use.
+
+Closures in Ruby are created using Proc.new, proc, or the literal lambda syntax (->).
+
+ruby
+Copy code
+multiplier = Proc.new { |x| x * 2 }
+puts multiplier.call(5)  # 10
+
+
+-----------------------------------------------------------
+

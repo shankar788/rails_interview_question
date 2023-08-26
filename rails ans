@@ -1,0 +1,248 @@
+many to many 
+user can have many courses and course have many student
+product and user and orders
+developer have many project and projects have  many devloper
+offere have many user and user have many offere
+
+has many :author has many books
+company has many employee
+college have many student
+team have many players
+
+
+polymorphic
+comment
+product and user s image as imageble
+notication user have and post have and video have
+sharebale user share video photo audio
+
+
+practical of all associations
+all callbacks
+
+uniq and distinct
+uniq for array and distinct for database query have limit and order count uniq does not have
+uniq will not useful for large datatype
+eager uses include and lazy by joins
+
+before_save :except: []
+only: 
+Validation: Use before_save to perform any data validation or manipulation before the object is saved. For example, you can clean up or format data, set default values, or validate certain conditions.
+
+Related actions: Use after_save to perform additional actions or updates that are dependent on the object being successfully saved. For example, you might want to trigger notifications, update associated records, or perform other tasks related to the successful saving of the object.
+
+Filter callbacks  =  before_action : after_action :
+
+before_action :authenticate_user, except: [:index, :show]
+before_action :load_user, only: [:show, :edit, :update, :destroy]
+
+
+garbase collection
+Mark and Sweep algorithm: Ruby's garbage collector uses a Mark and Sweep algorithm to identify and collect objects that are no longer referenced by the application. The algorithm consists of two main phases:
+
+
+
+Explain Ruby on Rails Exception Handling
+class UsersController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  private
+
+  def record_not_found
+    render plain: "User not found", status: :not_found
+  end
+end
+
+
+
+
+
+
+delete: The delete method is a direct database operation that deletes records without triggering any callbacks or validations defined in the model. When you call delete on an ActiveRecord object or a collection of objects, it generates a SQL DELETE statement that removes the corresponding records from the database.
+
+Here's an example:
+
+The delete method immediately removes the user record from the database without any additional processing. It doesn't invoke any before_delete or after_delete callbacks defined in the model, nor does it enforce any validations.
+
+It's important to note that delete cannot be undone. Once records are deleted using delete, they are permanently removed from the database, and associated data or relationships are not automatically handled.
+
+
+The delete method immediately removes the user record from the database without any additional processing. It doesn't invoke any before_delete or after_delete callbacks defined in the model, nor does it enforce any validations.
+
+It's important to note that delete cannot be undone. Once records are deleted using delete, they are permanently removed from the database, and associated data or relationships are not automatically handled.
+
+
+
+destroy: The destroy method is an ActiveRecord method that removes records from the database while also triggering callbacks and validations. When you call destroy on an ActiveRecord object or a collection of objects, it initiates a process that involves executing the before_destroy, destroy, and after_destroy callbacks defined in the model.
+
+Here's an example:
+
+
+
+
+========================================================================================
+How Many Types Of Callbacks Available In RoR?
+
+In Ruby on Rails, callbacks are methods that are automatically invoked at specific points 
+
+before_validation and after_validation: These callbacks are triggered before and after the validation process of a model. They are often used to manipulate or normalize data before it is validated.
+
+before_save and after_save: These callbacks are invoked before and after a record is saved to the database. They can be used to modify attributes or perform additional operations on the model before it is persisted.
+
+before_create and after_create: These callbacks are triggered before and after a new record is created in the database. They are useful for executing actions that should occur specifically during the creation process.
+
+before_update and after_update: These callbacks are invoked before and after an existing record is updated in the database. They can be used to perform actions that should happen during the update process.
+
+before_destroy and after_destroy: These callbacks are triggered before and after a record is deleted from the database. They are commonly used for performing cleanup tasks or handling related data removal.
+
+around_save, around_create, and around_destroy: These callbacks allow you to execute custom code before and after the main save, create, or destroy operation. They provide a way to wrap the entire operation with additional behavior.
+-----------------------------------------------------------------------------------------------------
+
+
+
+==================================================================================================
+What Do You Mean By Naming Convention In Rails?
+
+In Ruby on Rails, naming conventions refer to a set of rules and guidelines for naming various elements in your application, including models, controllers, database tables, routes, and more
+
+--------------------------------------------------------------------
+
+
+
+
+=========================
+class ApplicationController < ActionController::Base
+  around_action :log_request
+
+  private
+
+  def log_request
+    puts "Before processing the request"
+    yield
+    puts "After processing the request"
+  end
+end
+--------------------------------------
+
+
+====================================================================
+
+default: &default
+  adapter: postgresql
+  host: localhost
+  username: db_user
+  password: db_password
+  # ...
+
+database1:
+  <<: *default
+  database: database1_name
+
+database2:
+  <<: *default
+  database: database2_name
+
+
+
+# app/models/model_name.rb (for database1)
+class ModelName < ActiveRecord::Base
+  self.abstract_class = true
+  establish_connection :database1
+end
+
+# app/models/model_name.rb (for database2)
+class ModelName < ActiveRecord::Base
+  self.abstract_class = true
+  establish_connection :database2
+end
+
+
+
+rails generate migration CreateTableName --database=database1
+rails generate migration CreateTableName --database=database2
+
+------------------------------------------------------
+
+
+==================================================
+What is Asset Pipeline?  
+
+The Asset Pipeline is a feature in Ruby on Rails that helps manage and process static assets such as stylesheets, JavaScript files, and images
+----------------------------------------------------------------------
+
+====================================
+second_max_price = Product.order(price: :desc).limit(2).last&.price
+
+second_max = YourModel.order(column_name: :desc).limit(2).last
+
+=============================================
+
+
+
+==================================
+
+duplicates = User.select(:email).group(:email).having('COUNT(email) > 1')
+
+
+
+----------------------------------------
+
+
+
+
+=======================================================================
+
+
+where: The where method is used to filter and retrieve records from the database based on specific conditions. It allows you to specify the conditions that the records must meet to be included in the result set. The where method returns an ActiveRecord relation, which allows you to chain additional methods like order, limit, etc., to further refine the query.
+Here's an example of using where:
+
+r
+users = User.where(age: 25)
+This code retrieves all the users from the User model where the age attribute is 25. The where method filters the records based on the specified condition and returns an ActiveRecord relation representing the matching records.
+
+select: The select method is used to specify the specific columns or attributes you want to retrieve from the database for each record. It allows you to specify the fields you're interested in and includes only those fields in the result set. The select method returns an ActiveRecord relation.
+Here's an example of using select:
+
+
+names = User.select(:name)
+
+
+
+----------------------------------------------------
+
+
+====================================================
+
+What Are The Various Components Of Rail? 
+model ,view ,controller , helper ,assets
+
+--------------------------------
+
+
+==================================================================
+built in 
+class User < ApplicationRecord
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, length: { minimum: 6 }
+end
+
+custom
+class User < ApplicationRecord
+  validate :minimum_age
+
+  def minimum_age
+    if birthdate.present? && birthdate > 18.years.ago
+      errors.add(:birthdate, "must be at least 18 years old")
+    end
+  end
+end
+
+
+
+
+

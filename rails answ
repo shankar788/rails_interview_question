@@ -1,0 +1,85 @@
+practical of all associations
+all callbacks
+
+eager uses include and lazy by joins
+
+before_save :except: []
+only: 
+Validation: Use before_save to perform any data validation or manipulation before the object is saved. For example, you can clean up or format data, set default values, or validate certain conditions.
+
+Related actions: Use after_save to perform additional actions or updates that are dependent on the object being successfully saved. For example, you might want to trigger notifications, update associated records, or perform other tasks related to the successful saving of the object.
+
+Filter callbacks  =  before_action : after_action :
+
+before_action :authenticate_user, except: [:index, :show]
+before_action :load_user, only: [:show, :edit, :update, :destroy]
+
+
+garase collection
+Mark and Sweep algorithm: Ruby s garbage collector uses a Mark and Sweep algorithm to identify and collect objects that are no longer referenced by the application. The algorithm consists of two main phases:
+
+
+
+Explain Ruby on Rails Exception Handling
+class UsersController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  private
+
+  def record_not_found
+    render plain: "User not found", status: :not_found
+  end
+end
+
+
+
+
+
+
+delete: The delete method is a direct database operation that deletes records without triggering any callbacks or validations defined in the model. When you call delete on an ActiveRecord object or a collection of objects, it generates a SQL DELETE statement that removes the corresponding records from the database.
+
+Here's an example:
+
+The delete method immediately removes the user record from the database without any additional processing. It doesn't invoke any before_delete or after_delete callbacks defined in the model, nor does it enforce any validations.
+
+It s important to note that delete cannot be undone. Once records are deleted using delete, they are permanently removed from the database, and associated data or relationships are not automatically handled.
+
+
+The delete method immediately removes the user record from the database without any additional processing. It doesn t invoke any before_delete or after_delete callbacks defined in the model, nor does it enforce any validations.
+
+It s important to note that delete cannot be undone. Once records are deleted using delete, they are permanently removed from the database, and associated data or relationships are not automatically handled.
+
+
+
+destroy: The destroy method is an ActiveRecord method that removes records from the database while also triggering callbacks and validations. When you call destroy on an ActiveRecord object or a collection of objects, it initiates a process that involves executing the before_destroy, destroy, and after_destroy callbacks defined in the model.
+
+Here s an example:
+
+
+
+
+
+
+before_validation and after_validation: These callbacks are triggered before and after the validation process of a model. They are often used to manipulate or normalize data before it is validated.
+
+before_save and after_save: These callbacks are invoked before and after a record is saved to the database. They can be used to modify attributes or perform additional operations on the model before it is persisted.
+
+before_create and after_create: These callbacks are triggered before and after a new record is created in the database. They are useful for executing actions that should occur specifically during the creation process.
+
+before_update and after_update: These callbacks are invoked before and after an existing record is updated in the database. They can be used to perform actions that should happen during the update process.
+
+before_destroy and after_destroy: These callbacks are triggered before and after a record is deleted from the database. They are commonly used for performing cleanup tasks or handling related data removal.
+
+around_save, around_create, and around_destroy: These callbacks allow you to execute custom code before and after the main save, create, or destroy operation. They provide a way to wrap the entire operation with additional behavior.
+
+
+
+
+
+
+
+

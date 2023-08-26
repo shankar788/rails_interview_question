@@ -1,0 +1,307 @@
+syntax of model controller spec factory routes member admin register migration
+what is model controller and restfull routes
+how to ptint error message
+
+
+rroutes and 
+what is purspose of strong parameter done
+Can you explain the concept of eager loading in Rails?
+
+What are initializers in Rails?
+What Rails design patterns have you used?
+There are a number of design patterns in Rails, including utility objects, value objects, form objects, request objects, view objects, policy objects, and decorators.
+
+How have you implemented authorization in the past? pending
+
+Authorization (not to be confused with authentication) refers to allowing different types of users to have different levels of access in an application. This is useful when there are many types of users with different access levels.
+
+
+When would you use the before_save or after_save callback?
+
+Several gems like Pundit and CanCanCan implement authorization.
+
+explain sidekiq in rails (pending)a = "shankar hurpude, fgfgfgg"
+b = ""
+c= ""
+i=0
+j=0
+k=0
+(a.length).times do |i|
+    b+=a[a.length-1-i]
+end    
+puts b.length
+
+What does garbage collection do in Ruby on Rails?
+
+Describe what destructive methods are(pending)
+
+Describe some frameworks developers use for background jobs.(pending)
+
+
+What does “skinny controllers, skinny models” mean?.
+
+
+What are fixtures in Ruby on Rails?
+
+Explain Ruby on Rails Exception Handling
+
+What Is The Difference Between Delete And Destroy?  
+
+  
+ What is the difference between string and text in Rails? 
+  
+What is ActiveJob? When should we use it?pending
+ 
+What Is The Difference Between Save And Save!? 
+ 
+
+What Do You Mean By Naming Convention In Rails?  
+
+
+What is Rack?  
+
+What Is The Flash?  
+
+How Many Types Of Callbacks Available In RoR?  
+ 
+What is the difference between content_for and yield?  
+
+How would you choose between Belongs_to And Has_one?  
+
+How To Use Two Databases Into A Single Application? 
+ 
+What is a Rails engine?  
+
+ 
+What is Asset Pipeline? 
+\
+Explain Ruby on Rails Exception Handling  
+
+How To Find Second Max Element From Database?  
+ 
+How to check if a specific key is present in a hash or not?  
+
+How to rollback a specific migration?  
+
+How Do I Find Only Duplicate Entries In A Database Table?  
+
+where and select
+
+
+What Things We Can Define In The Model?  
+  
+How should you use nested layouts? 
+  
+What is the use of Destructive Method?  
+  
+Mention what is the purpose of RJs in Rails?  
+
+Mention what is the difference between the Observers and Callbacks in Ruby on Rails?  
+
+Explain what is Polymorphic Association in Ruby on Rails?  
+
+What is the use of Destructive Method?  
+  
+Mention what is the function of garbage collection in Ruby on Rails?  
+
+What is the purpose of the rakefile available in the demo directory in Ruby? 
+
+What Are The Various Components Of Rail?  
+
+How Many Types Of Relationships Does A Model Has?  
+
+A
+has_one
+belongs_to
+has_many
+has_many :through
+
+What is the use of load and require in Ruby?  
+
+what is MVC Architechture.
+
+what is enum
+
+Explain how you can run Rails application without creating databases?  rails new myapp --skip-database
+
+association record query.
+
+validation and cutom validation.
+
+
+action mailer
+
+rails route and nested route and member and collection
+
+
+resource and resources
+
+
+ 	 	 	 			
+
+What is ORM
+
+what is helper
+
+what is active record
+Active Record is an Object-Relational Mapping (ORM) framework in Ruby on Rails. It is a core component of Rails that provides an interface to interact with a relational database.
+
+what is garbage collection
+
+How MVC Archetectiure worjk
+
+what is differences b/w callback
+
+dynamic and static scaffold 
+
+how can you protect CSRF
+
+Name three limits of Ruby on Rails.	
+
+What do subdirectory app/controllers and app/helpers do?
+
+Explain when self.up and self.down method is used?
+
+How can you protect Rails against Cross-Site Request Forgery?5
+
+What does garbage collection do in Ruby on Rails
+
+What is the role of load and require in Ruby?9
+
+What is the difference between observers and callbacks in Ruby on rails?8
+ 
+What is the purpose of the rakefile available in the demo directory in Ruby?
+
+Explain the difference between ActiveSupport’s "HashWithIndifferentAccess" and Ruby’s "Hash"?
+
+Explain the difference between dynamic and static scaffolding
+
+ 
+What are the limits of Ruby on Rails?
+ 
+include and join difference
+ 
+ Mention what is the difference between the Observers and Callbacks in Ruby on Rails?
+ In Ruby code, you quite often see the trick of using an expression like array.map(&:method_name) as a shorthand form of array.map { |element| element.method_name }. How exactly does it work?
+ 
+ Explain what is rake in Rails?
+  	
+ Explain what is sweeper in Rails?
+ 
+Explain what is “Yield” in Ruby on Rails? 
+
+Explain what is the difference between Dynamic and Static Scaffolding?
+  
+ Mention what is the function of garbage collection in Ruby on Rails?
+ 
+ Mention what is the difference between redirect and render in Ruby on Rails?
+  
+Explain about Dig, Float and Max?
+
+Explain how can we define Ruby regular expressions?
+
+Explain what is the difference between put and putc statement?
+
+What do you understand with the ERB in Ruby on Rails? 
+
+Name the three default environments in Rails?
+
+Name the two types of Scaffolding in the Ruby? 
+
+ Given this input:
+ Tell something about Action Controller in Ruby on Rails?
+ 
+Name the three default environments in Rails?
+ These are 
+
+1. Development
+2. Production 
+3. Testing
+Where one should look for the controller classes for handling the web request in Ruby?
+
+How can you say that the symbols are different from variables in the ruby?
+
+What exactly do you know about the Rail Observers?
+
+Explain what is the role of sub-directory app/controllers and app/helpers?
+
+
+
+
+
+x = [{"a" => 10},{"b" => 20},{"c" => 30}]
+How can you obtain the following?
+
+one array containing all keys
+another containing all values
+the sum of all the values
+
+
+
+
+
+Write a function that sorts the keys in a hash by the length of the key as a string. For instance, the hash:
+
+list = [{"a" => 10}, {"b" => 20}, {"c" => 30}]
+
+# Get all keys in an array
+keys = list.map { |hash| hash.keys }.flatten
+puts "Keys: #{keys}" # Output: Keys: ["a", "b", "c"]
+
+# Get all values in an array
+values = list.map { |hash| hash.values }.flatten
+puts "Values: #{values}" # Output: Values: [10, 20, 30]
+
+# Calculate the sum of all values
+sum = values.sum
+puts "Sum of values: #{sum}" # Output: Sum of values: 60
+
+
+
+list = [{"a" => 10}, {"b" => 20}, {"c" => 30}]
+
+# Get all keys in an array
+keys = list.map(&:keys).flatten
+puts "Keys: #{keys}" # Output: Keys: ["a", "b", "c"]
+
+# Get all values in an array
+values = list.map(&:values).flatten
+puts "Values: #{values}" # Output: Values: [10, 20, 30]
+
+# Calculate the sum of all values
+sum = values.sum
+puts "Sum of values: #{sum}" # Output: Sum of values: 60
+
+
+
+
+
+
+
+
+
+
+
+hash = { abc: 'hello', 'another_key' => 123, 4567 => 'third' }
+
+sorted_hash = hash.sort_by { |key, value| value }.to_h
+puts sorted_hash.inspect
+
+
+
+
+
+sort hash with key
+
+{ abc: 'hello', 'another_key' => 123, 4567 => 'third' }
+
+hash = { abc: 'hello', 'another_key' => 123, 4567 => 'third' }
+
+
+
+
+
+a = hash.keys.map { |key| key.to_s }.sort_by { |key| key.length }
+
+# a = hash.keys.map(&:to_s).sort_by(&:length)
+puts a

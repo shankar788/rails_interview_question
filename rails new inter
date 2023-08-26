@@ -1,0 +1,127 @@
+difference preload and includes
+
+what do you mean by sanitizing params
+
+render and redirect
+
+what is after save and afte commit
+
+perform and perform_async? in sidekiq
+
+what is let and let! and context and it in rspec
+
+uniq and distict
+
+update and update attribute method
+
+what do you mean by strict and conditional validations?
+ptach and put
+
+serializers
+
+N+1 
+
+STI
+
+self_join_association
+
+it is possible to change the convention of namijjg a table in rails? if yes how will you do this? please explain.
+
+how we can run specific migration
+
+what are the Relational and  conditional callbacks in ActiveRecord?Explain them.
+
+what are transactional callback?Explain them
+
+what do you mean by member and collection
+
+what do you know about namespace and scoped routing in rails
+
+what is scope in query?
+
+webpacker and  sprockets.
+
+explain all active record query
+
+what are validations in rails? At what momemts of an objects's lifecycle validations are checked?
+
+what is single table inheritence
+
+what is the difference between class methods and scopes? Are they similar?
+
+custom validations
+
+partial in rails
+
+what do delegates in rails Explain usage of delegates.
+
+helper in rails 
+
+actiona mailers
+
+what do you mean by concern in rails? explain the way of using a concern?
+
+what is the differences between a sidekiq workder and rails Activejob?
+
+what is rake task
+
+ActiveStorage
+
+how do you pass default arguments to a controller action where you instantiate a new model object?
+
+what do you mean by api versioning in rails?Explain when there is a need to change the version of an API?
+
+difference between before_save  before_create and before_update?
+
+default scope in rails
+
+how to use array type in any any table in rails?
+
+possible to replace schema.rb
+
+how do you organize your controller how to make thin
+
+difference between active record and activemodel 
+
+dependent::destory dependent::delete_all?
+
+what is yelid in ruby? what happens if you call the method, which includes yield without passing a block?
+
+what is the difference s between hash and HashWithdifferentAccess?
+
+in ruby how many ways to invoke a method?illustrate with example?
+
+what do you by schema versioning in rails? When does it change?
+
+what do mean by reversible migrations?
+
+what is shallow nesting routes?
+
+what is inject method in ruby?
+
+equal and eql?
+
+what is difference between iterators and loops in ruby?
+
+what are accessor methods in ruby?
+list and explain accessor methods.
+
+what are class level and module level attributes?
+
+singleton class in ruby?
+
+enum  and array?
+
+what do you think it the right time to define a helper method inside c acontroller in rails?
+
+difference between itrators and loops in ruby?
+
+it is possible to send emails without renderign a template in rails? if yes how will you do this?
+
+deliver now deliver later?
+
+what are modules in ruby?How can you differentiate class and instance methods in module?
+
+what happend that if you not provide the column type in remove_column migration?
+
+what happend  if you rollback a change_column migration within the change method?
